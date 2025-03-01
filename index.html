@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站导航</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-top: -100px;
+            margin-bottom: 30px;
+            font-size: 3.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .search-container {
+            margin-bottom: 40px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-input {
+            width: 500px;
+            height: 50px;
+            border: none;
+            border-radius: 25px;
+            padding: 0 25px;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .search-input:focus {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+
+        .search-button {
+            height: 50px;
+            padding: 0 30px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #4285f4, #34a853);
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .nav-button {
+            width: 400px;
+            height: 120px;
+            border: none;
+            border-radius: 25px;
+            font-size: 2.2em;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .baidu {
+            background: linear-gradient(45deg, #4285f4, #34a853);
+        }
+
+        .bilibili {
+            background: linear-gradient(45deg, #fb7299, #fc9db6);
+        }
+
+        .iqiyi {
+            background: linear-gradient(45deg, #00be06, #0bbe9e);
+        }
+    </style>
+</head>
+<body>
+    <h1>咱班专属的导航界面</h1>
+    <p>Designed By 薛</p>
+    <form class="search-container" action="https://www.baidu.com/s" method="get" target="_blank">
+        <input type="text" name="wd" class="search-input" placeholder="输入关键词搜索..." autocomplete="off">
+        <button type="submit" class="search-button">搜索</button>
+    </form>
+    <div class="container">
+        <a href="https://www.baidu.com" target="_blank" class="nav-button baidu">
+            百度一下
+        </a>
+        <a href="https://www.bilibili.com" target="_blank" class="nav-button bilibili">
+            哔哩哔哩
+        </a>
+        <a href="https://www.iqiyi.com" target="_blank" class="nav-button iqiyi">
+            爱奇艺
+        </a>
+    </div>
+</body>
+</html>
