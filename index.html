@@ -13,100 +13,633 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(-45deg, 
+                #ee7752,
+                #e73c7e,
+                #23a6d5,
+                #23d5ab,
+                #7449f5,
+                #ee7752
+            );
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             font-family: "Microsoft YaHei", sans-serif;
         }
 
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* 页面加载动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         h1 {
-            color: #2c3e50;
-            margin-top: -100px;
-            margin-bottom: 30px;
-            font-size: 3.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            color: #ffffff;
+            margin-top: -50px;
+            margin-bottom: 20px;
+            font-size: 2.8em;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        p {
+            color: #ffffff;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            font-size: 1em;
+            margin-bottom: 15px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.4s;
         }
 
         .search-container {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             display: flex;
             gap: 10px;
+            width: 90%;
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.6s;
         }
 
         .search-input {
-            width: 500px;
-            height: 50px;
+            width: 100%;
+            height: 45px;
             border: none;
             border-radius: 25px;
             padding: 0 25px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             outline: none;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
         }
 
         .search-input:focus {
+            transform: translateY(-2px) scale(1.01);
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
         }
 
         .search-button {
-            height: 50px;
-            padding: 0 30px;
+            height: 45px;
+            padding: 0 25px;
+            font-size: 1.1em;
             border: none;
-            border-radius: 25px;
+            border-radius: 22.5px;
             background: linear-gradient(45deg, #4285f4, #34a853);
             color: white;
-            font-size: 1.2em;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .search-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .search-button:active {
+            transform: translateY(2px) scale(0.98);
         }
 
         .container {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            padding: 20px;
+            gap: 20px;
+            padding: 15px;
+            width: 90%;
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.8s;
         }
 
         .nav-button {
-            width: 400px;
-            height: 120px;
+            width: 100%;
+            height: 90px;
+            font-size: 1.8em;
             border: none;
-            border-radius: 25px;
-            font-size: 2.2em;
+            border-radius: 45px;
             cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-decoration: none;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
             font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
 
         .nav-button:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+            filter: brightness(1.1);
+        }
+
+        .nav-button:active {
+            transform: translateY(2px) scale(0.95);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.2s ease;
         }
 
         .baidu {
             background: linear-gradient(45deg, #4285f4, #34a853);
+            animation-delay: 1s;
         }
 
         .bilibili {
             background: linear-gradient(45deg, #fb7299, #fc9db6);
+            animation-delay: 1.2s;
         }
 
         .iqiyi {
             background: linear-gradient(45deg, #00be06, #0bbe9e);
+            animation-delay: 1.4s;
+        }
+
+        .random-number-container {
+            margin-top: 30px;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 1.6s;
+        }
+
+        .random-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .number-input {
+            width: 60px;
+            height: 40px;
+            border: none;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .number-input:focus {
+            outline: none;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .numbers-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .number-display {
+            font-size: 2em;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            min-height: 60px;
+            min-width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        .random-button {
+            width: 280px;
+            height: 80px;
+            font-size: 1.8em;
+            border: none;
+            border-radius: 40px;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .random-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .random-button:active {
+            transform: translateY(2px) scale(0.98);
+        }
+
+        .nav-button::after,
+        .random-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transition: transform 0.6s;
+        }
+
+        .nav-button:hover::after,
+        .random-button:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .number-animation {
+            animation: numberAnimation 0.5s ease;
+        }
+
+        .cursor-effect {
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, opacity 0.3s;
+            z-index: 9999;
+            backdrop-filter: blur(2px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
+                       0 0 40px rgba(255, 255, 255, 0.4),
+                       0 0 60px rgba(255, 255, 255, 0.2);
+        }
+
+        .cursor-trail {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: width 0.1s, height 0.1s, opacity 0.3s;
+            z-index: 9998;
+        }
+
+        .nav-button:hover ~ .cursor-effect,
+        .nav-button:hover ~ .cursor-trail,
+        .search-button:hover ~ .cursor-effect,
+        .search-button:hover ~ .cursor-trail,
+        .random-button:hover ~ .cursor-effect,
+        .random-button:hover ~ .cursor-trail {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        .hide-all-effects .cursor-effect,
+        .hide-all-effects .cursor-trail {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        .nav-button:hover,
+        .search-button:hover,
+        .random-button:hover {
+            cursor: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em;
+                margin-top: -30px;
+            }
+
+            .nav-button {
+                height: 70px;
+                font-size: 1.5em;
+            }
+
+            .random-button {
+                width: 240px;
+                height: 70px;
+                font-size: 1.6em;
+            }
+
+            .search-input {
+                font-size: 1em;
+            }
+
+            .search-button {
+                font-size: 1em;
+                padding: 0 20px;
+            }
+        }
+
+        /* 页面加载遮罩 */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeOut 0.5s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.createElement('div');
+            cursor.className = 'cursor-effect';
+            document.body.appendChild(cursor);
+
+            // 创建多个轨迹点
+            const trails = Array.from({length: 10}, (_, i) => {
+                const trail = document.createElement('div');
+                trail.className = 'cursor-trail';
+                trail.style.opacity = (1 - i * 0.1).toString();
+                document.body.appendChild(trail);
+                return trail;
+            });
+
+            // 添加鼠标效果控制
+            const buttons = document.querySelectorAll('.nav-button, .search-button, .random-button');
+            
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    document.body.classList.add('hide-all-effects');
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    document.body.classList.remove('hide-all-effects');
+                });
+            });
+
+            let mouseX = 0;
+            let mouseY = 0;
+            let cursorX = 0;
+            let cursorY = 0;
+            let trailPositions = trails.map(() => ({x: 0, y: 0}));
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function animate() {
+                // 主光标动画
+                const dx = mouseX - cursorX;
+                const dy = mouseY - cursorY;
+                cursorX += dx * 0.2;
+                cursorY += dy * 0.2;
+                cursor.style.left = cursorX + 'px';
+                cursor.style.top = cursorY + 'px';
+
+                // 轨迹点动画
+                for (let i = trails.length - 1; i > 0; i--) {
+                    trailPositions[i] = {...trailPositions[i-1]};
+                }
+                trailPositions[0] = {x: cursorX, y: cursorY};
+
+                trails.forEach((trail, i) => {
+                    const pos = trailPositions[i];
+                    trail.style.left = pos.x + 'px';
+                    trail.style.top = pos.y + 'px';
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+            // 烟花粒子效果
+            class Particle {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.size = Math.random() * 3 + 2;
+                    this.speedX = Math.random() * 2 - 1;
+                    this.speedY = Math.random() * 2 - 1;
+                    this.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+                    this.life = 1;
+                    this.element = document.createElement('div');
+                    this.element.style.position = 'fixed';
+                    this.element.style.pointerEvents = 'none';
+                    this.element.style.zIndex = '9997';
+                    document.body.appendChild(this.element);
+                }
+
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    this.life -= 0.02;
+                    this.element.style.left = this.x + 'px';
+                    this.element.style.top = this.y + 'px';
+                    this.element.style.width = this.size + 'px';
+                    this.element.style.height = this.size + 'px';
+                    this.element.style.backgroundColor = this.color;
+                    this.element.style.borderRadius = '50%';
+                    this.element.style.opacity = this.life;
+                    this.speedY += 0.1; // 添加重力效果
+                }
+
+                remove() {
+                    this.element.remove();
+                }
+            }
+
+            let particles = [];
+            let lastMouseX = 0;
+            let lastMouseY = 0;
+            let isMoving = false;
+            let moveTimeout;
+
+            document.addEventListener('mousemove', (e) => {
+                isMoving = true;
+                clearTimeout(moveTimeout);
+                
+                // 增加粒子数量到5个
+                if (Math.abs(e.clientX - lastMouseX) > 5 || Math.abs(e.clientY - lastMouseY) > 5) {
+                    for (let i = 0; i < 5; i++) {
+                        particles.push(new Particle(e.clientX, e.clientY));
+                    }
+                }
+
+                lastMouseX = e.clientX;
+                lastMouseY = e.clientY;
+
+                moveTimeout = setTimeout(() => {
+                    isMoving = false;
+                }, 100);
+            });
+
+            function animateParticles() {
+                particles = particles.filter(particle => {
+                    if (particle.life <= 0) {
+                        particle.remove();
+                        return false;
+                    }
+                    particle.update();
+                    return true;
+                });
+
+                requestAnimationFrame(animateParticles);
+            }
+
+            animateParticles();
+
+            // 修改抽学号功能
+            let isGenerating = false;
+            let generateInterval;
+            const numbersContainer = document.querySelector('.numbers-container');
+            const randomButton = document.querySelector('.random-button');
+            const numberInput = document.querySelector('.number-input');
+            let selectedNumbers = new Set();
+
+            function generateRandomNumber() {
+                let number;
+                do {
+                    number = Math.floor(Math.random() * 47) + 1;
+                } while (selectedNumbers.has(number));
+                return number;
+            }
+
+            function updateDisplay(numbers) {
+                numbersContainer.innerHTML = '';
+                numbers.forEach(number => {
+                    const numberDiv = document.createElement('div');
+                    numberDiv.className = 'number-display number-animation';
+                    numberDiv.textContent = number;
+                    numbersContainer.appendChild(numberDiv);
+                });
+            }
+
+            function startGeneration() {
+                if (isGenerating) return;
+                
+                const count = parseInt(numberInput.value) || 1;
+                if (count > 47) {
+                    alert('最多只能抽取47个学号！');
+                    return;
+                }
+
+                isGenerating = true;
+                randomButton.textContent = '停止';
+                selectedNumbers.clear();
+                
+                generateInterval = setInterval(() => {
+                    const tempNumbers = [];
+                    for (let i = 0; i < count; i++) {
+                        tempNumbers.push(Math.floor(Math.random() * 47) + 1);
+                    }
+                    updateDisplay(tempNumbers);
+                }, 50);
+
+                setTimeout(stopGeneration, 3000);
+            }
+
+            function stopGeneration() {
+                if (!isGenerating) return;
+                clearInterval(generateInterval);
+                isGenerating = false;
+                randomButton.textContent = '抽取学号';
+                
+                const count = parseInt(numberInput.value) || 1;
+                const finalNumbers = [];
+                
+                for (let i = 0; i < count; i++) {
+                    if (selectedNumbers.size >= 47) break;
+                    let number = generateRandomNumber();
+                    selectedNumbers.add(number);
+                    finalNumbers.push(number);
+                }
+                
+                updateDisplay(finalNumbers);
+            }
+
+            randomButton.addEventListener('click', () => {
+                if (isGenerating) {
+                    stopGeneration();
+                } else {
+                    startGeneration();
+                }
+            });
+        });
+
+        // 添加页面加载完成后移除加载遮罩
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loader = document.querySelector('.page-loader');
+                if (loader) {
+                    loader.style.display = 'none';
+                }
+            }, 700);
+        });
+    </script>
 </head>
 <body>
+    <div class="page-loader">
+        <div class="loader"></div>
+    </div>
     <h1>咱班专属的导航界面</h1>
     <p>Designed By 薛</p>
     <form class="search-container" action="https://www.baidu.com/s" method="get" target="_blank">
@@ -123,6 +656,13 @@
         <a href="https://www.iqiyi.com" target="_blank" class="nav-button iqiyi">
             爱奇艺
         </a>
+    </div>
+    <div class="random-number-container">
+        <div class="random-controls">
+            <input type="number" class="number-input" min="1" max="47" value="1" placeholder="数量">
+            <button class="random-button">抽取学号</button>
+        </div>
+        <div class="numbers-container"></div>
     </div>
 </body>
 </html>
