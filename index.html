@@ -19,26 +19,23 @@
                 #23a6d5,
                 #23d5ab,
                 #7449f5,
+                #ff3366,
+                #4285f4,
                 #ee7752
             );
             background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            animation: gradientBG 8s ease-in-out infinite;
             font-family: "Microsoft YaHei", sans-serif;
         }
 
         @keyframes gradientBG {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+            100% { background-position: 0% 50%; }
         }
 
-        /* 页面加载动画 */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -52,7 +49,7 @@
 
         h1 {
             color: #ffffff;
-            margin-top: -50px;
+            margin-top: -100px;
             margin-bottom: 20px;
             font-size: 2.8em;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
@@ -63,64 +60,24 @@
 
         p {
             color: #ffffff;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-            font-size: 1em;
-            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            font-size: 1.8em;
+            margin-bottom: 30px;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
             animation-delay: 0.4s;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .search-container {
-            margin-bottom: 30px;
-            display: flex;
-            gap: 10px;
-            width: 90%;
-            max-width: 600px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-            animation-delay: 0.6s;
-        }
-
-        .search-input {
-            width: 100%;
-            height: 45px;
-            border: none;
-            border-radius: 25px;
-            padding: 0 25px;
-            font-size: 1.1em;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            outline: none;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(5px);
-        }
-
-        .search-input:focus {
-            transform: translateY(-2px) scale(1.01);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .search-button {
-            height: 45px;
-            padding: 0 25px;
-            font-size: 1.1em;
-            border: none;
-            border-radius: 22.5px;
-            background: linear-gradient(45deg, #4285f4, #34a853);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .search-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
-
-        .search-button:active {
-            transform: translateY(2px) scale(0.98);
+        h5 {
+          color: #ffffff;
+          text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+          opacity: 0;
+          animation: fadeInUp 0.8s ease forwards;
+          animation-delay: 0.2s;
         }
 
         .container {
@@ -132,7 +89,7 @@
             max-width: 600px;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
-            animation-delay: 0.8s;
+            animation-delay: 0.6s;
         }
 
         .nav-button {
@@ -170,103 +127,25 @@
 
         .baidu {
             background: linear-gradient(45deg, #4285f4, #34a853);
-            animation-delay: 1s;
+            animation-delay: 0.8s;
         }
 
         .bilibili {
             background: linear-gradient(45deg, #fb7299, #fc9db6);
-            animation-delay: 1.2s;
+            animation-delay: 1s;
         }
 
         .iqiyi {
             background: linear-gradient(45deg, #00be06, #0bbe9e);
+            animation-delay: 1.2s;
+        }
+
+        .tencent {
+            background: linear-gradient(45deg, #ff9900, #ff3366);
             animation-delay: 1.4s;
         }
 
-        .random-number-container {
-            margin-top: 30px;
-            text-align: center;
-            width: 90%;
-            max-width: 600px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-            animation-delay: 1.6s;
-        }
-
-        .random-controls {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .number-input {
-            width: 60px;
-            height: 40px;
-            border: none;
-            border-radius: 20px;
-            text-align: center;
-            font-size: 1.2em;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .number-input:focus {
-            outline: none;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .numbers-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .number-display {
-            font-size: 2em;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-            min-height: 60px;
-            min-width: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 10px;
-            backdrop-filter: blur(5px);
-        }
-
-        .random-button {
-            width: 280px;
-            height: 80px;
-            font-size: 1.8em;
-            border: none;
-            border-radius: 40px;
-            background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .random-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
-        }
-
-        .random-button:active {
-            transform: translateY(2px) scale(0.98);
-        }
-
-        .nav-button::after,
-        .random-button::after {
+        .nav-button::after {
             content: '';
             position: absolute;
             top: 50%;
@@ -279,13 +158,8 @@
             transition: transform 0.6s;
         }
 
-        .nav-button:hover::after,
-        .random-button:hover::after {
+        .nav-button:hover::after {
             transform: translate(-50%, -50%) scale(1);
-        }
-
-        .number-animation {
-            animation: numberAnimation 0.5s ease;
         }
 
         .cursor-effect {
@@ -296,7 +170,7 @@
             position: fixed;
             pointer-events: none;
             transform: translate(-50%, -50%);
-            transition: width 0.2s, height 0.2s, opacity 0.3s;
+            transition: width 0.2s, height 0.2s;
             z-index: 9999;
             backdrop-filter: blur(2px);
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
@@ -312,102 +186,165 @@
             position: fixed;
             pointer-events: none;
             transform: translate(-50%, -50%);
-            transition: width 0.1s, height 0.1s, opacity 0.3s;
+            transition: width 0.1s, height 0.1s;
             z-index: 9998;
         }
 
         .nav-button:hover ~ .cursor-effect,
-        .nav-button:hover ~ .cursor-trail,
-        .search-button:hover ~ .cursor-effect,
-        .search-button:hover ~ .cursor-trail,
-        .random-button:hover ~ .cursor-effect,
-        .random-button:hover ~ .cursor-trail {
-            opacity: 0 !important;
-            visibility: hidden !important;
+        .nav-button:hover ~ .cursor-trail {
+            opacity: 0.6 !important;
         }
 
         .hide-all-effects .cursor-effect,
         .hide-all-effects .cursor-trail {
-            opacity: 0 !important;
-            visibility: hidden !important;
-        }
-
-        .nav-button:hover,
-        .search-button:hover,
-        .random-button:hover {
-            cursor: none;
+            opacity: 0.6 !important;
         }
 
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.2em;
-                margin-top: -30px;
             }
 
             .nav-button {
                 height: 70px;
                 font-size: 1.5em;
             }
-
-            .random-button {
-                width: 240px;
-                height: 70px;
-                font-size: 1.6em;
-            }
-
-            .search-input {
-                font-size: 1em;
-            }
-
-            .search-button {
-                font-size: 1em;
-                padding: 0 20px;
-            }
         }
 
-        /* 页面加载遮罩 */
-        .page-loader {
+        .dino-container {
             position: fixed;
-            top: 0;
-            left: 0;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            z-index: 9999;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards 2s;
+        }
+
+        .dino {
             width: 100%;
             height: 100%;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            animation: fadeOut 0.5s ease forwards;
-            animation-delay: 0.2s;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADtklEQVR4nO2bTWgTQRTHf5s2aZomTb5sjYqKFa2CqIgHEVE8ehE8ehL0JnjwIHjxoCDeBAUP6kHw4EXUkyB48SYIguBBrR+IWrXFD2qT2KZpk8Zk42FndXc7u5nZnc3Gwh4Cye7MvP/7z7x5M7sLKlSoMNhQ/hVYDEwHGoAJwAigDqgFBgO1QA1QBfQAPcBvoAv4AXwD2oEvwCfgPfAG+GrXiRpgJjAPmAVMAsYCw4E6IAeoQAD+AD3Ab+An8B74CLwF3gHPgfagDqgGpgJLgcXANKARGArUAzm5Qwr0At0S0HfgI/AaeAk8A17Jv31RDUwG5gNzgSnAaGAYUC/9UOScvdKGLuAb8Al4Lx3zDHhiOiAHzAZWAsuAKcBIYAiQl8AV+bdbgu0EPgOtwBPgEfDQdEADsBBYDswFxgEjgEHyXpH+dEt/OoAvwBvgKfAYuGc6YAawBlgFTJR/83Jy3VKqHcBn4BVwH7gN3DQdMAZYDawEpsvJDZYT7JGT+wa8A+4Ct4DrpgMagXXAamAcUCMn2CXl/xG4B9wBbgHXTAfkgTXARnlVS7AfZbI7gdvADeC86YBqYD2wBRgjk9kp5X8HuAlcBc6aDqgFNgFbgVFAm5T/ZeCyPM6aDhgMbAO2A8OBl8AF4CJwxnRAHbAD2AWMBC4Bp4GTwAnTAfXALmA3MBQ4CxwHjgFHTQcMAHYDB4B64DhwBDgMHDIdkAcOAgeBQcBh4BBwEPjddEClEFapFEKFChUqVPAkCywAtgIrgbEpxzIeWAesB5qCGmaBxcA+YLb8nnYAU4GdQAvQbGqQBZYAR4GZ8nvagUwDDgHLgWZTgyywDDgOTJDf0w5oEnACWAE0mRpkgRXASWC8/J52YBOBk8AqoNHUIAssB04DE+T3tAMcD5wC1gINpgZZYBVwBhgnv6cd6FjgLLAeqDM1yAJrgfPAGPk97YAbgQvARqDW1EBhwVkPXARGy+9pBz4KuARsAQaYGijAJuAKMFJ+TzuIEcBVYBuQMzVQgI3ANaBBfk87mOHAdeC/+wNQWHBuACPk97QDGgbcAnYCVaYGCrAduA0Mld/TDqoeYcHZi4cFRwE2AHeAIfJ72sHVIiw4B/Cw4CjAOuAeMEh+TzvIGoQFpwUPC44CrAbuA/Xye9rBViMsOIfwsOAowArgIVAnv6cdcBXCgnMYDwuOAiwDHgG18nvaQSvAXuAoHhYcBViCsODUyO9pB64Au4FjeFhwFGARwoJTLb+nDUABdiAsOB4WHAWYj7DgVMnvaQeiANsRFhwPC44CzEVYcHLye9rAKMAWhAUnZ2rw/xhCZQiVIVSGUBlCZQgdGEL/AO1f4E/MDo2IAAAAAElFTkSuQmCC');
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: dinoWalk 0.5s steps(2) infinite;
+            filter: brightness(0.9);
+            opacity: 0.9;
         }
 
-        @keyframes fadeOut {
+        @keyframes dinoWalk {
             from {
-                opacity: 1;
+                background-position: 0 0;
             }
             to {
-                opacity: 0;
-                visibility: hidden;
+                background-position: -160px 0;
             }
         }
 
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
+        @keyframes dinoJump {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+        .dino:hover {
+            animation: dinoJump 0.5s ease infinite;
+            cursor: pointer;
+        }
+
+        /* 搜索栏样式 */
+        .search-container {
+            width: 90%;
+            max-width: 600px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        .search-input {
+            flex: 1;
+            height: 45px;
+            border: none;
+            border-radius: 25px;
+            padding: 0 25px;
+            font-size: 1.1em;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .search-input:focus {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .search-button {
+            height: 45px;
+            padding: 0 25px;
+            border: none;
+            border-radius: 22.5px;
+            background: linear-gradient(45deg, #4285f4, #34a853);
+            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-button:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .search-button:active {
+            transform: translateY(1px) scale(0.98);
         }
     </style>
+</head>
+<body>
+    <h1>网站导航</h1>
+    <p>Designed By 薛子宏
+    <br>
+    <h5>只做最纯净的导航界面</h5>
+    
+    <!-- 添加搜索栏 -->
+    <form class="search-container" action="https://www.baidu.com/s" method="get" target="_blank">
+        <input type="text" name="wd" class="search-input" placeholder="输入关键词搜索..." autocomplete="off">
+        <button type="submit" class="search-button">搜索</button>
+    </form>
+
+    <div class="container">
+        <a href="https://www.baidu.com" target="_blank" class="nav-button baidu">
+            百度一下
+        </a>
+        <a href="https://www.bilibili.com" target="_blank" class="nav-button bilibili">
+            哔哩哔哩
+        </a>
+        <a href="https://www.iqiyi.com" target="_blank" class="nav-button iqiyi">
+            爱奇艺
+        </a>
+        <a href="https://v.qq.com" target="_blank" class="nav-button tencent">
+            腾讯视频
+        </a>
+    </div>
+
+    <div class="dino-container">
+        <div class="dino"></div>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // 创建光标效果
             const cursor = document.createElement('div');
             cursor.className = 'cursor-effect';
             document.body.appendChild(cursor);
@@ -422,8 +359,7 @@
             });
 
             // 添加鼠标效果控制
-            const buttons = document.querySelectorAll('.nav-button, .search-button, .random-button');
-            
+            const buttons = document.querySelectorAll('.nav-button');
             buttons.forEach(button => {
                 button.addEventListener('mouseenter', () => {
                     document.body.classList.add('hide-all-effects');
@@ -471,7 +407,7 @@
 
             animate();
 
-            // 烟花粒子效果
+            // 粒子效果
             class Particle {
                 constructor(x, y) {
                     this.x = x;
@@ -517,7 +453,6 @@
                 isMoving = true;
                 clearTimeout(moveTimeout);
                 
-                // 增加粒子数量到5个
                 if (Math.abs(e.clientX - lastMouseX) > 5 || Math.abs(e.clientY - lastMouseY) > 5) {
                     for (let i = 0; i < 5; i++) {
                         particles.push(new Particle(e.clientX, e.clientY));
@@ -547,122 +482,14 @@
 
             animateParticles();
 
-            // 修改抽学号功能
-            let isGenerating = false;
-            let generateInterval;
-            const numbersContainer = document.querySelector('.numbers-container');
-            const randomButton = document.querySelector('.random-button');
-            const numberInput = document.querySelector('.number-input');
-            let selectedNumbers = new Set();
-
-            function generateRandomNumber() {
-                let number;
-                do {
-                    number = Math.floor(Math.random() * 47) + 1;
-                } while (selectedNumbers.has(number));
-                return number;
-            }
-
-            function updateDisplay(numbers) {
-                numbersContainer.innerHTML = '';
-                numbers.forEach(number => {
-                    const numberDiv = document.createElement('div');
-                    numberDiv.className = 'number-display number-animation';
-                    numberDiv.textContent = number;
-                    numbersContainer.appendChild(numberDiv);
-                });
-            }
-
-            function startGeneration() {
-                if (isGenerating) return;
-                
-                const count = parseInt(numberInput.value) || 1;
-                if (count > 47) {
-                    alert('最多只能抽取47个学号！');
-                    return;
-                }
-
-                isGenerating = true;
-                randomButton.textContent = '停止';
-                selectedNumbers.clear();
-                
-                generateInterval = setInterval(() => {
-                    const tempNumbers = [];
-                    for (let i = 0; i < count; i++) {
-                        tempNumbers.push(Math.floor(Math.random() * 47) + 1);
-                    }
-                    updateDisplay(tempNumbers);
-                }, 50);
-
-                setTimeout(stopGeneration, 3000);
-            }
-
-            function stopGeneration() {
-                if (!isGenerating) return;
-                clearInterval(generateInterval);
-                isGenerating = false;
-                randomButton.textContent = '抽取学号';
-                
-                const count = parseInt(numberInput.value) || 1;
-                const finalNumbers = [];
-                
-                for (let i = 0; i < count; i++) {
-                    if (selectedNumbers.size >= 47) break;
-                    let number = generateRandomNumber();
-                    selectedNumbers.add(number);
-                    finalNumbers.push(number);
-                }
-                
-                updateDisplay(finalNumbers);
-            }
-
-            randomButton.addEventListener('click', () => {
-                if (isGenerating) {
-                    stopGeneration();
-                } else {
-                    startGeneration();
-                }
+            // 添加小恐龙点击事件
+            document.querySelector('.dino').addEventListener('click', function() {
+                this.style.animation = 'dinoJump 0.5s ease';
+                setTimeout(() => {
+                    this.style.animation = 'dinoWalk 0.5s steps(2) infinite';
+                }, 500);
             });
         });
-
-        // 添加页面加载完成后移除加载遮罩
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const loader = document.querySelector('.page-loader');
-                if (loader) {
-                    loader.style.display = 'none';
-                }
-            }, 700);
-        });
     </script>
-</head>
-<body>
-    <div class="page-loader">
-        <div class="loader"></div>
-    </div>
-    <h1>咱班专属的导航界面</h1>
-    <p>Designed By 薛</p>
-    <form class="search-container" action="https://www.baidu.com/s" method="get" target="_blank">
-        <input type="text" name="wd" class="search-input" placeholder="输入关键词搜索..." autocomplete="off">
-        <button type="submit" class="search-button">搜索</button>
-    </form>
-    <div class="container">
-        <a href="https://www.baidu.com" target="_blank" class="nav-button baidu">
-            百度一下
-        </a>
-        <a href="https://www.bilibili.com" target="_blank" class="nav-button bilibili">
-            哔哩哔哩
-        </a>
-        <a href="https://www.iqiyi.com" target="_blank" class="nav-button iqiyi">
-            爱奇艺
-        </a>
-    </div>
-    <div class="random-number-container">
-        <div class="random-controls">
-            <input type="number" class="number-input" min="1" max="47" value="1" placeholder="数量">
-            <button class="random-button">抽取学号</button>
-        </div>
-        <div class="numbers-container"></div>
-    </div>
 </body>
 </html>
