@@ -13,18 +13,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(-45deg, 
-                #ee7752,
-                #e73c7e,
-                #23a6d5,
-                #23d5ab,
-                #7449f5,
-                #ff3366,
-                #4285f4,
-                #ee7752
-            );
-            background-size: 400% 400%;
-            animation: gradientBG 8s ease-in-out infinite;
             font-family: "Microsoft YaHei", sans-serif;
         }
 
@@ -49,8 +37,8 @@
 
         h1 {
             color: #ffffff;
-            margin-top: -100px;
-            margin-bottom: 20px;
+            margin-top: 0px;
+            margin-bottom: 00px;
             font-size: 2.8em;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
             opacity: 0;
@@ -62,22 +50,22 @@
             color: #ffffff;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
             font-size: 1.8em;
-            margin-bottom: 30px;
+            margin-bottom: 0px;
             opacity: 0;
             animation: fadeInUp 0.8s ease forwards;
             animation-delay: 0.4s;
             font-weight: bold;
-            background: linear-gradient(45deg, #FFD700, #FFA500);
+            background: linear-gradient(45deg, #ff3300, #FFA500);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        h5 {
-          color: #ffffff;
-          text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-          opacity: 0;
-          animation: fadeInUp 0.8s ease forwards;
-          animation-delay: 0.2s;
+        h4 {
+            color: #ffffff;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.2s;
         }
 
         .container {
@@ -210,52 +198,6 @@
                 font-size: 1.5em;
             }
         }
-
-        .dino-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 80px;
-            height: 80px;
-            z-index: 9999;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards 2s;
-        }
-
-        .dino {
-            width: 100%;
-            height: 100%;
-            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAADtklEQVR4nO2bTWgTQRTHf5s2aZomTb5sjYqKFa2CqIgHEVE8ehE8ehL0JnjwIHjxoCDeBAUP6kHw4EXUkyB48SYIguBBrR+IWrXFD2qT2KZpk8Zk42FndXc7u5nZnc3Gwh4Cye7MvP/7z7x5M7sLKlSoMNhQ/hVYDEwHGoAJwAigDqgFBgO1QA1QBfQAPcBvoAv4AXwD2oEvwCfgPfAG+GrXiRpgJjAPmAVMAsYCw4E6IAeoQAD+AD3Ab+An8B74CLwF3gHPgfagDqgGpgJLgcXANKARGArUAzm5Qwr0At0S0HfgI/AaeAk8A17Jv31RDUwG5gNzgSnAaGAYUC/9UOScvdKGLuAb8Al4Lx3zDHhiOiAHzAZWAsuAKcBIYAiQl8AV+bdbgu0EPgOtwBPgEfDQdEADsBBYDswFxgEjgEHyXpH+dEt/OoAvwBvgKfAYuGc6YAawBlgFTJR/83Jy3VKqHcBn4BVwH7gN3DQdMAZYDawEpsvJDZYT7JGT+wa8A+4Ct4DrpgMagXXAamAcUCMn2CXl/xG4B9wBbgHXTAfkgTXARnlVS7AfZbI7gdvADeC86YBqYD2wBRgjk9kp5X8HuAlcBc6aDqgFNgFbgVFAm5T/ZeCyPM6aDhgMbAO2A8OBl8AF4CJwxnRAHbAD2AWMBC4Bp4GTwAnTAfXALmA3MBQ4CxwHjgFHTQcMAHYDB4B64DhwBDgMHDIdkAcOAgeBQcBh4BBwEPjddEClEFapFEKFChUqVPAkCywAtgIrgbEpxzIeWAesB5qCGmaBxcA+YLb8nnYAU4GdQAvQbGqQBZYAR4GZ8nvagUwDDgHLgWZTgyywDDgOTJDf0w5oEnACWAE0mRpkgRXASWC8/J52YBOBk8AqoNHUIAssB04DE+T3tAMcD5wC1gINpgZZYBVwBhgnv6cd6FjgLLAeqDM1yAJrgfPAGPk97YAbgQvARqDW1EBhwVkPXARGy+9pBz4KuARsAQaYGijAJuAKMFJ+TzuIEcBVYBuQMzVQgI3ANaBBfk87mOHAdeC/+wNQWHBuACPk97QDGgbcAnYCVaYGCrAduA0Mld/TDqoeYcHZi4cFRwE2AHeAIfJ72sHVIiw4B/Cw4CjAOuAeMEh+TzvIGoQFpwUPC44CrAbuA/Xye9rBViMsOIfwsOAowArgIVAnv6cdcBXCgnMYDwuOAiwDHgG18nvaQSvAXuAoHhYcBViCsODUyO9pB64Au4FjeFhwFGARwoJTLb+nDUABdiAsOB4WHAWYj7DgVMnvaQeiANsRFhwPC44CzEVYcHLye9rAKMAWhAUnZ2rw/xhCZQiVIVSGUBlCZQgdGEL/AO1f4E/MDo2IAAAAAElFTkSuQmCC');
-            background-size: contain;
-            background-repeat: no-repeat;
-            animation: dinoWalk 0.5s steps(2) infinite;
-            filter: brightness(0.9);
-            opacity: 0.9;
-        }
-
-        @keyframes dinoWalk {
-            from {
-                background-position: 0 0;
-            }
-            to {
-                background-position: -160px 0;
-            }
-        }
-
-        @keyframes dinoJump {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .dino:hover {
-            animation: dinoJump 0.5s ease infinite;
-            cursor: pointer;
-        }
-
         /* 搜索栏样式 */
         .search-container {
             width: 90%;
@@ -311,11 +253,11 @@
         }
     </style>
 </head>
-<body>
-    <h1>网站导航</h1>
+<body style="background: url('bg.jpg') no-repeat center center/cover;">
+    <h1>网  站  导  航</h1>
     <p>Designed By 薛子宏
     <br>
-    <h5>只做最纯净的导航界面</h5>
+    <h4>只做最纯净的导航界面</h4>
     
     <!-- 添加搜索栏 -->
     <form class="search-container" action="https://www.baidu.com/s" method="get" target="_blank">
@@ -350,7 +292,7 @@
             document.body.appendChild(cursor);
 
             // 创建多个轨迹点
-            const trails = Array.from({length: 10}, (_, i) => {
+            const trails = Array.from({length: 1}, (_, i) => {
                 const trail = document.createElement('div');
                 trail.className = 'cursor-trail';
                 trail.style.opacity = (1 - i * 0.1).toString();
@@ -416,7 +358,7 @@
                     this.speedX = Math.random() * 2 - 1;
                     this.speedY = Math.random() * 2 - 1;
                     this.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
-                    this.life = 1;
+                    this.life = 10;
                     this.element = document.createElement('div');
                     this.element.style.position = 'fixed';
                     this.element.style.pointerEvents = 'none';
@@ -453,8 +395,8 @@
                 isMoving = true;
                 clearTimeout(moveTimeout);
                 
-                if (Math.abs(e.clientX - lastMouseX) > 5 || Math.abs(e.clientY - lastMouseY) > 5) {
-                    for (let i = 0; i < 5; i++) {
+                if (Math.abs(e.clientX - lastMouseX) > 2 || Math.abs(e.clientY - lastMouseY) > 2) {
+                    for (let i = 0; i < 2; i++) {
                         particles.push(new Particle(e.clientX, e.clientY));
                     }
                 }
@@ -481,14 +423,6 @@
             }
 
             animateParticles();
-
-            // 添加小恐龙点击事件
-            document.querySelector('.dino').addEventListener('click', function() {
-                this.style.animation = 'dinoJump 0.5s ease';
-                setTimeout(() => {
-                    this.style.animation = 'dinoWalk 0.5s steps(2) infinite';
-                }, 500);
-            });
         });
     </script>
 </body>
